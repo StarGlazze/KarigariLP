@@ -608,18 +608,18 @@ body {
 /* Mini Text (sub heading small) */
 .subtext {
     color: #d8b16f;
-    font-size: 13px;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 /* Circle image */
 .circle-img {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 }
 
 .circle-img img {
@@ -630,17 +630,18 @@ body {
 
 /* Text */
 .dark-box h3 {
-    font-size: 22px;
-    line-height: 1.4;
-    margin-bottom: 14px;
+    font-size: 28px;
+    line-height: 1.45;
+    margin-bottom: 20px;
 }
 
 /* Button explore */
 .dark-box .btn-secondary {
-    padding: 10px 25px;
+    padding: 12px 32px;
     background: white;
     color: #c9a961;
-    border-radius: 25px;
+    border-radius: 30px;
+    font-size: 16px;
     transition: 0.3s;
 }
 
