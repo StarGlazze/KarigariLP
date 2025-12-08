@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Karigari — Home Decor & Furniture</title>
+    <title>Karigari – Home Decor & Furniture</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- TOP BAR -->
     <div class="topbar">
-        <span>✨ Use coupon code <b>KG50</b> & get 50% off (Multibuy only) ⚡</span>
+        <div class="topbar-left">Use coupon code <b>KG50</b> & get 50% off (Multibuy only)</div>
+        <div class="topbar-right">
+            <select class="lang-dropdown" id="langSelect">
+                <option value="en">English</option>
+                <option value="id">Indonesia</option>
+            </select>
+        </div>
     </div>
 
     <!-- HEADER -->
@@ -18,41 +26,74 @@
         <div class="logo">Karigari</div>
 
         <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">Categories</a>
-            <a href="#">Product</a>
-            <a href="#">Pages</a>
-            <a href="#">Blog</a>
+            <a href="#hero">Home</a> <!-- section hero -->
+            <a href="#categories">Categories</a> <!-- section categories -->
+            <a href="#promo">Shop</a> <!-- section promo -->
+            <a href="#products">Product</a> <!-- section products -->
+            <a href="#showcase">Pages</a> <!-- section showcase -->
+            <a href="#articles">Blog</a> <!-- section articles -->
         </nav>
 
         <div class="icons">
-            <span class="icon">🔍</span>
-            <span class="icon">❤️</span>
-            <span class="icon">👤</span>
-            <span class="icon">🛒</span>
+            <span class="icon search-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </span>
+            <span class="icon wishlist-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                </svg>
+            </span>
+            <span class="icon user-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </span>
+            <span class="icon cart-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-badge">0</span>
+            </span>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-left">
-            <div class="hero-k">K</div>
+    <section id="hero" class="hero">
+        <!-- LEFT: IMAGE (50%) -->
+        <div class="hero-left hero-image-block">
+            <img src="images/product4.jpg" class="hero-img" alt="Hero Chair">
+        </div>
+        <!-- RIGHT: TEXT (50%) -->
+        <div class="hero-right hero-text-block">
+            <div class="section-k">K</div>
             <h1>Sofa Chair Set For<br>Relaxation & Home<br>Decor Status</h1>
-            <button class="btn-primary">Shop Now</button>
+            <button class="btn-secondary">Shop Now</button>
         </div>
-
-        <div class="hero-right">
-            <img src="images/hero-chair.jpg" class="hero-img" alt="Hero Chair">
-        </div>
-
-        <button class="hero-next" aria-label="Next slide">›</button>
+        <!-- SVG arrow button -->
+        <button class="hero-next" aria-label="Next slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
     </section>
 
     <!-- CATEGORIES -->
-    <section class="categories">
+    <section id="categories" class="categories">
         <div class="section-title">
             <span class="section-k">K</span>
+            <p class="section-subtitle">HOME STYLES WITH DIVERSE CATEGORIES</p>
             <h2>Home Decor Categories</h2>
         </div>
 
@@ -60,66 +101,104 @@
             <div class="cat-item">
                 <div class="cat-circle"><img src="images/hero-chair.jpg" alt="Chairs"></div>
                 <h4>Chairs</h4>
+                <span class="cat-badge">Explore</span>
             </div>
 
             <div class="cat-item">
                 <div class="cat-circle"><img src="images/nightstand.jpg" alt="Nightstands"></div>
                 <h4>Nightstands</h4>
+                <span class="cat-badge">Explore</span>
             </div>
 
             <div class="cat-item">
                 <div class="cat-circle"><img src="images/bunkbed.jpg" alt="Bunk Beds"></div>
                 <h4>Bunk Beds</h4>
+                <span class="cat-badge">Explore</span>
             </div>
 
             <div class="cat-item">
                 <div class="cat-circle"><img src="images/flowerpot.jpeg" alt="Flower Pot"></div>
                 <h4>Flower Pot</h4>
+                <span class="cat-badge">Explore</span>
             </div>
 
             <div class="cat-item">
                 <div class="cat-circle"><img src="images/thermo.jpeg" alt="Thermo Jug"></div>
                 <h4>Thermo Jug</h4>
+                <span class="cat-badge">Explore</span>
             </div>
 
             <div class="cat-item">
                 <div class="cat-circle"><img src="images/sidetable.jpg" alt="Side Tables"></div>
                 <h4>Side Tables</h4>
+                <span class="cat-badge">Explore</span>
             </div>
         </div>
     </section>
 
     <!-- FEATURES -->
     <section class="features">
-        <div class="f-item">
-            <div class="fic">📦</div>
+        <div class="f-item up">
+            <div class="fic">
+                <!-- Modern Shipping Icon -->
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 3h13v13H3z"></path>
+                    <path d="M16 8h4l1 3v5h-5"></path>
+                    <circle cx="7.5" cy="18.5" r="1.5"></circle>
+                    <circle cx="17.5" cy="18.5" r="1.5"></circle>
+                </svg>
+            </div>
             <h4>Free Shipping & Returns</h4>
             <p>Get free delivery nationwide with no minimum purchase.</p>
         </div>
 
-        <div class="f-item">
-            <div class="fic">💰</div>
+        <div class="f-item down">
+            <div class="fic">
+                <!-- Modern Refund Icon -->
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a9 9 0 1 0 9 9"></path>
+                    <polyline points="22 3 22 9 16 9"></polyline>
+                </svg>
+            </div>
             <h4>Money Back Guarantee</h4>
             <p>Return within 30 days for full refund, no questions asked.</p>
         </div>
 
-        <div class="f-item">
-            <div class="fic">💬</div>
+        <div class="f-item up">
+            <div class="fic">
+                <!-- Modern Headset Support Icon -->
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 12v1a4 4 0 0 0 4 4h1v-4H4z"></path>
+                    <path d="M20 12v1a4 4 0 0 1-4 4h-1v-4h5z"></path>
+                    <path d="M12 3a9 9 0 0 1 9 9v1H3v-1a9 9 0 0 1 9-9z"></path>
+                </svg>
+            </div>
             <h4>Online Support 24/7</h4>
             <p>Fully dedicated customer service team anytime.</p>
         </div>
 
-        <div class="f-item">
-            <div class="fic">🏷️</div>
+        <div class="f-item down">
+            <div class="fic">
+                <!-- Modern Sale Tag Icon -->
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 7l9-4 9 4-9 4-9-4z"></path>
+                    <path d="M3 17l9 4 9-4"></path>
+                    <path d="M3 12l9 4 9-4"></path>
+                </svg>
+            </div>
             <h4>Regular Sales</h4>
             <p>Exclusive deals, weekly updates, and new collections.</p>
         </div>
     </section>
 
     <!-- PROMO SECTION -->
-    <section class="promo">
-        <div class="promo-left">
-            <div class="promo-card">
+    <section id="promo" class="promo">
+        <div class="promo-left-large">
+            <div class="promo-card promo-large">
                 <img src="images/quilt.jpg" alt="Quilt">
                 <div class="promo-text">
                     <p>Our New Best</p>
@@ -129,8 +208,8 @@
             </div>
         </div>
 
-        <div class="promo-right">
-            <div class="promo-card promo-brown">
+        <div class="promo-right-stack">
+            <div class="promo-card promo-half">
                 <img src="images/pottery.jpg" alt="Pottery">
                 <div class="promo-text">
                     <p>We work with the best brands</p>
@@ -139,7 +218,7 @@
                 </div>
             </div>
 
-            <div class="promo-card">
+            <div class="promo-card promo-half text-right">
                 <img src="images/ceramics.jpg" alt="Ceramics">
                 <div class="promo-text">
                     <p>Our New Product</p>
@@ -151,7 +230,7 @@
     </section>
 
     <!-- TOP SELLING PRODUCTS (8 items) -->
-    <section class="products">
+    <section id="products" class="products">
         <h2>Top Selling Products</h2>
 
         <div class="prod-grid">
@@ -219,7 +298,7 @@
     </section>
 
     <!-- MOSAIC / SHOWCASE SECTION (yang ada gambar kecil & text circle di kiri) -->
-    <section class="showcase">
+    <section id="showcase" class="showcase">
         <div class="showcase-left">
             <div class="circle-badge">
                 <img src="images/circle-icon.jpg" alt="Badge">
@@ -241,7 +320,7 @@
     </section>
 
     <!-- LATEST ARTICLES -->
-    <section class="articles">
+    <section id="articles" class="articles">
         <div class="articles-title">
             <h4>From Our Latest Articles</h4>
         </div>
@@ -307,4 +386,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
