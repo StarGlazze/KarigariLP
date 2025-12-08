@@ -572,57 +572,82 @@ body {
     margin-top: 35px;
 }
 
-/* SHOWCASE (MOSAIC) */
+/* SHOWCASE */
 .showcase {
-    padding: 80px;
-    background: #3d342a;
-    color: #fff;
+    padding: 0; /* no padding */
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px 500px;
+    gap: 0; /* no gap */
 }
 
-.showcase-left {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.circle-badge {
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
+/* Box dasar */
+.showcase-box {
+    position: relative;
     overflow: hidden;
 }
 
-.circle-badge img {
+/* Full image */
+.img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.showcase-text h3 {
-    font-size: 30px;
-    font-weight: 600;
+/* Dark box (left top & right bottom) */
+.dark-box {
+    background: #3d342a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.showcase-text p {
-    margin-top: 10px;
-    font-size: 14px;
-    opacity: 0.85;
+/* Mini Text (sub heading small) */
+.subtext {
+    color: #d8b16f;
+    font-size: 13px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
 }
 
-.showcase-right .showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+/* Circle image */
+.circle-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 18px;
 }
 
-.showcase-img img {
+.circle-img img {
     width: 100%;
-    height: 180px;
-    border-radius: 12px;
+    height: 100%;
     object-fit: cover;
+}
+
+/* Text */
+.dark-box h3 {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+/* Button explore */
+.dark-box .btn-secondary {
+    padding: 10px 25px;
+    background: white;
+    color: #c9a961;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+/* Hover sama kayak Shop button */
+.dark-box .btn-secondary:hover {
+    background: #c9a961;
+    color: #fff;
 }
 
 /* ARTICLES */
