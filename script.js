@@ -18,9 +18,9 @@ window.addEventListener("scroll", () => {
 
 /* HERO SLIDER */
 let heroImages = [
-    "images/hero-chair.jpg",
-    "images/hero-chair-2.jpg",
-    "images/hero-chair-3.jpg"
+    "images/product4.jpg",
+    "images/product5.jpg",
+    "images/product3.jpg"
 ];
 
 let heroIndex = 0;
@@ -98,26 +98,55 @@ function notify(msg) {
 
 /* CART COUNTER */
 let cartCount = 0;
+const cartBadge = document.querySelector(".cart-badge");
+
+// Update cart badge display
+function updateCartBadge() {
+    if (cartBadge) {
+        cartBadge.textContent = cartCount;
+        cartBadge.style.display = cartCount > 0 ? 'flex' : 'none';
+    }
+}
+
+// Initialize cart badge (hide if empty)
+updateCartBadge();
+
+// Add to cart on product click
 document.querySelectorAll(".prod-card").forEach(card => {
     card.addEventListener("click", () => {
         cartCount++;
+        updateCartBadge();
         notify(`Added to cart (${cartCount})`);
     });
+});
+
+// Cart icon click
+document.querySelector(".cart-icon").addEventListener("click", () => {
+    if (cartCount > 0) {
+        notify(`You have ${cartCount} items in cart`);
+    } else {
+        notify("Your cart is empty");
+    }
 });
 
 
 /* WISHLIST */
 let wishlist = 0;
-document.querySelectorAll(".icon")[1].addEventListener("click", () => {
+document.querySelector(".wishlist-icon").addEventListener("click", () => {
     wishlist++;
-    notify(`Wishlist items: ${wishlist}`);
+    notify(`Added to wishlist! ❤️ (${wishlist})`);
 });
 
 
 /* SEARCH BOX */
-document.querySelectorAll(".icon")[0].addEventListener("click", () => {
+document.querySelector(".search-icon").addEventListener("click", () => {
     const q = prompt("Search for…");
     if (q) notify(`Searching: ${q}`);
+});
+
+/* USER ICON */
+document.querySelector(".user-icon").addEventListener("click", () => {
+    notify("Login / Register");
 });
 
 
@@ -138,7 +167,7 @@ if (news) {
 
 /* FADE-IN ON SCROLL */
 const fadeEls = document.querySelectorAll(
-    ".cat-item, .prod-card, .promo-card, .article-card, .f-item"
+    ".cat-item, .prod-card, .promo-card, .article-card"
 );
 
 fadeEls.forEach(el => {
@@ -159,6 +188,11 @@ const fadeObs = new IntersectionObserver(entries => {
 
 fadeEls.forEach(el => fadeObs.observe(el));
 
+/* LANGUAGE SELECTOR */
+const langSelect = document.getElementById('langSelect');
+langSelect.addEventListener('change', () => {
+    notify('Language changed to: ' + langSelect.value);
+});
 
 /* GREETING */
-console.log("%cKarigari UI Loaded", "font-size:18px;color:#c9a961;font-weight:bold;");
+console.log("%cKarigari UI Loaded ✓", "font-size:18px;color:#c9a961;font-weight:bold;");
