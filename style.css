@@ -704,49 +704,110 @@ body {
     color: #fff;
 }
 
-/* ARTICLES */
+/* ARTICLES (slider version) */
 .articles {
     padding: 80px 80px;
     background: #f4f1ec;
 }
 
-.articles-title h4 {
+/* Title + subtitle */
+.articles-title {
     text-align: center;
+    margin-bottom: 28px;
+}
+.articles-title .section-k {
+    color: #c9a961;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+}
+.articles-title .section-subtitle {
+    color: #c9a961;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.articles-title h4 {
     font-size: 28px;
-    margin-bottom: 40px;
+    margin: 0 0 20px;
 }
 
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-.article-card {
-    border-radius: 14px;
-    background: #fff;
-    padding-bottom: 20px;
+/* viewport that masks overflow */
+.articles-viewport {
     overflow: hidden;
-    border: 1px solid #eee;
+    margin-bottom: 28px;
 }
 
+/* horizontal track */
+.articles-track {
+    display: flex;
+    gap: 28px;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+/* each article card */
+.article-card {
+    flex: 0 0 calc((100% - 56px) / 3); /* show 3 cards with gap accounted */
+    background: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    text-align: left;
+    scroll-snap-align: start;
+    /* remove border-radius per request */
+    border-radius: 0;
+    min-width: 280px;
+}
+
+/* media: make it responsive */
+@media (max-width: 1100px) {
+    .article-card { flex: 0 0 calc((100% - 28px) / 2); } /* 2 cards */
+}
+@media (max-width: 650px) {
+    .article-card { flex: 0 0 100%; } /* 1 card */
+}
+
+/* image inside card */
 .article-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    display: block;
 }
 
+/* text */
 .article-card h5 {
     padding: 15px 18px 0;
     font-size: 18px;
     font-weight: 600;
 }
-
 .article-card p {
-    padding: 6px 18px;
+    padding: 6px 18px 20px;
     font-size: 14px;
     color: #777;
 }
+
+.articles-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 65px;
+    padding: 0 40px;
+    opacity: .9;
+}
+
+.articles-icons img {
+    width: 85px;
+    opacity: .85;
+}
+
+/* Hide track scrollbar visually but keep functionality */
+.articles-track::-webkit-scrollbar { height: 8px; }
+.articles-track::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 6px; }
 
 /* FOOTER */
 footer {

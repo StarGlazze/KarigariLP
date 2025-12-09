@@ -95,3 +95,70 @@ function showCartNotification(count) {
         setTimeout(() => notif.remove(), 300);
     }, 3000);
 }
+
+/* ARTICLE SLIDER */
+const track = document.querySelector(".articles-track");
+const prev = document.getElementById("articlePrev");
+const next = document.getElementById("articleNext");
+
+let position = 0;
+const slideWidth = 350 + 24; // width card + gap
+const maxSlides = 6 - 3; // total 6, tampil 3
+
+next.addEventListener("click", () => {
+    if (position < maxSlides) {
+        position++;
+        track.style.transform = `translateX(-${position * slideWidth}px)`;
+    }
+});
+
+prev.addEventListener("click", () => {
+    if (position > 0) {
+        position--;
+        track.style.transform = `translateX(-${position * slideWidth}px)`;
+    }
+});
+/* ARTICLES: drag-to-scroll + snap handling (no buttons) */
+(function(){
+  const track = document.querySelector('.articles-track');
+  if (!track) return;
+
+  let isDown = false;
+  let startX, scrollLeft;
+
+  // pointer down
+  track.addEventListener('pointerdown', (e) => {
+    isDown = true;
+    track.setPointerCapture(e.pointerId);
+    startX = e.clientX;
+    scrollLeft = track.scrollLeft;
+    track.classList.add('dragging');
+  });
+
+  // pointer move
+  track.addEventListener('pointermove', (e) => {
+    if (!isDown) return;
+    const x = e.clientX;
+    const walk = (startX - x); // how much we moved
+    track.scrollLeft = scrollLeft + walk;
+  });
+
+  // pointer up / leave
+  const stopDrag = (e) => {
+    isDown = false;
+    track.classList.remove('dragging');
+    try { track.releasePointerCapture(e && e.pointerId); } catch(e){ }
+    // optional: snap to nearest card (browser mostly snaps due to scroll-snap)
+    // we can enhance by programmatic snapping if needed later
+  };
+  track.addEventListener('pointerup', stopDrag);
+  track.addEventListener('pointercancel', stopDrag);
+  track.addEventListener('pointerleave', stopDrag);
+
+  // keyboard arrows to move one card
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement && /input|textarea/i.test(document.activeElement.tagName)) return;
+    if (e.key === 'ArrowRight') track.scrollBy({ left: track.clientWidth/3 + 28, behavior: 'smooth' });
+    if (e.key === 'ArrowLeft') track.scrollBy({ left: - (track.clientWidth/3 + 28), behavior: 'smooth' });
+  });
+})();
