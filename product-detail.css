@@ -1,0 +1,141 @@
+/* product-detail.css - styling for product detail page */
+:root{
+    --gold:#c9a961;
+    --bg:#f7f5f0;
+    --card:#fff;
+    --text:#222;
+}
+
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color:var(--text);
+}
+
+/* simple header */
+.pd-header{
+    background:#fff;
+    padding:18px 28px;
+    border-bottom:1px solid #eee;
+}
+.pd-header .logo{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:700;
+    font-size:22px;
+}
+
+/* page wrapper */
+.product-detail-wrap{
+    max-width:1120px;
+    margin:30px auto;
+    padding:0 20px 60px;
+}
+
+/* back button */
+/* back button */
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:24px;
+    background:#fff;
+    border:2px solid #e5e5e5;
+    color:#333;
+    font-size:15px;
+    font-weight:600;
+    padding:12px 24px;
+    border-radius:9999px;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+
+.back-btn:hover{
+    background:var(--gold);
+    color:#fff;
+    border-color:var(--gold);
+    transform:translateX(-4px);
+    box-shadow:0 4px 12px rgba(201,169,97,0.25);
+}
+
+.back-btn:active{
+    transform:translateX(-2px) scale(0.98);
+}
+
+/* container card */
+.detail-container{
+    display:flex;
+    gap:36px;
+    background:var(--card);
+    padding:28px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    align-items:flex-start;
+}
+
+/* left - image */
+.detail-left{
+    flex:0 0 460px;
+}
+.detail-left img{
+    width:100%;
+    height:460px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* right - info */
+.detail-right{
+    flex:1;
+}
+.detail-right h1{
+    margin:0 0 10px;
+    font-size:28px;
+}
+.price{
+    color:var(--gold);
+    font-size:22px;
+    margin:6px 0 12px;
+    font-weight:700;
+}
+.rating{
+    color:#f0b400;
+    margin-bottom:18px;
+}
+
+/* description paragraph - longer, readable */
+.description{
+    font-size:15px;
+    color:#444;
+    line-height:1.7;
+    margin-bottom:22px;
+    max-width:680px;
+}
+
+/* actions */
+.actions{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+.add-cart-btn{
+    background:var(--gold);
+    color:#fff;
+    border:none;
+    padding:12px 28px;
+    border-radius:9999px;
+    cursor:pointer;
+    font-weight:600;
+    transition:transform .15s ease, filter .15s ease;
+}
+.add-cart-btn:hover{ transform:translateY(-2px); filter:brightness(.98); }
+
+/* responsive */
+@media (max-width:900px){
+    .detail-container{ flex-direction:column; }
+    .detail-left{ flex:0 0 auto; width:100%;}
+    .detail-left img{ height:320px; }
+}
