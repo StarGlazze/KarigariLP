@@ -161,4 +161,34 @@ prev.addEventListener("click", () => {
     if (e.key === 'ArrowRight') track.scrollBy({ left: track.clientWidth/3 + 28, behavior: 'smooth' });
     if (e.key === 'ArrowLeft') track.scrollBy({ left: - (track.clientWidth/3 + 28), behavior: 'smooth' });
   });
-})();
+})
+
+// Smooth drag scroll untuk slider artikel
+const viewport = document.querySelector('.articles-viewport');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+viewport.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - viewport.offsetLeft;
+    scrollLeft = viewport.scrollLeft;
+});
+
+viewport.addEventListener('mouseleave', () => {
+    isDown = false;
+});
+
+viewport.addEventListener('mouseup', () => {
+    isDown = false;
+});
+
+viewport.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - viewport.offsetLeft;
+    const walk = (x - startX) * 1.5; 
+    viewport.scrollLeft = scrollLeft - walk;
+});
+
