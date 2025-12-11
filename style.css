@@ -692,6 +692,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 /* Mini Text (sub heading small) */
@@ -1211,6 +1213,7 @@ RESPONSIVE
         right: 20px;
         bottom: 55%;
         transform: translateY(50%);
+        display: none;
     }
 
     .hero-next svg {
