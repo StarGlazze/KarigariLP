@@ -4,35 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Article Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="article-detail.css" />
 </head>
 <body>
+    <!-- Background Decoration -->
+    <div class="bg-decoration">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
 
     <section class="article-detail">
+        <a href="index.html#articles" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Articles
+        </a>
 
-        <button class="back-btn" onclick="window.location.href='index.html#articles'">Back</button>
-
-        <div class="detail-wrapper">
-
+        <div class="detail-card">
             <div class="detail-image">
+                <span class="category-badge">Interior Design</span>
                 <img id="article-img" src="images/article1.png" alt="Article Image">
             </div>
 
             <div class="detail-content">
-                <h1 id="article-title">Comfortable Living Room Ideas</h1>
-                <p class="meta" id="article-date">Published: December 2025</p>
+                <div class="meta-info">
+                    <div class="meta-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span id="article-date">December 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>8 min read</span>
+                    </div>
+                </div>
 
-                <p id="article-desc">
+                <h1 id="article-title">Comfortable Living Room Ideas</h1>
+                
+                <div class="divider"></div>
+
+                <p id="article-intro">
                     A comfortable living room enhances relaxation, warmth, and aesthetics.
                     This guide explores the best design approaches to create a cozy atmosphere—
                     from selecting the perfect furniture layout, choosing calm and neutral tones,
                     to incorporating modern decorative accents that elevate the entire space.
                 </p>
 
+                <div class="tags">
+                    <span class="tag">Living Room</span>
+                    <span class="tag">Interior Tips</span>
+                    <span class="tag">Home Decor</span>
+                    <span class="tag">Modern Design</span>
+                </div>
+
+                <!-- Full Article Content -->
+                <div id="article-full-content" class="article-content">
+                    <!-- Content will be loaded dynamically by JS -->
+                </div>
+
             </div>
-
         </div>
-
     </section>
 
     <script src="article-detail.js"></script>

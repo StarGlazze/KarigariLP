@@ -7,30 +7,84 @@
     <link rel="stylesheet" href="product-detail.css" />
 </head>
 <body>
+    <!-- Background Decoration -->
+    <div class="bg-decoration">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
 
     <header class="pd-header">
         <a class="logo" href="index.html">Karigari</a>
     </header>
 
     <main class="product-detail-wrap">
-        <button class="back-btn" onclick="window.location.href='index.html#products'">Back to Home</button>
+        <button class="back-btn" onclick="window.location.href='index.html#products'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </button>
 
         <div class="detail-container">
             <div class="detail-left">
-                <img id="detail-image" src="images/product1.jpg" alt="Product image">
+                <div class="image-wrapper">
+                    <span class="product-badge">Premium</span>
+                    <img id="detail-image" src="images/product1.jpg" alt="Product image">
+                </div>
             </div>
 
             <div class="detail-right">
+                <span class="product-category">Furniture</span>
                 <h1 id="detail-title">Product Title</h1>
                 <p id="detail-price" class="price">$0.00</p>
-                <div id="detail-rating" class="rating">★★★★★</div>
+                
+                <div class="rating">
+                    <span class="stars" id="detail-rating">★★★★★</span>
+                    <span class="rating-text">(124 reviews)</span>
+                </div>
+
+                <div class="divider"></div>
 
                 <p id="detail-desc" class="description">
                     <!-- description will be injected by JS -->
                 </p>
 
+                <div class="features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Premium quality materials with expert craftsmanship</li>
+                        <li>Durable construction built to last for years</li>
+                        <li>Timeless design that complements any interior</li>
+                        <li>Easy to maintain and clean</li>
+                    </ul>
+                </div>
+
                 <div class="actions">
                     <button id="addCartBtn" class="add-cart-btn">Add to Cart</button>
+                    <button class="wishlist-btn" title="Add to Wishlist">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="product-info">
+                    <div class="info-item">
+                        <span class="info-label">Material</span>
+                        <span class="info-value">Premium Wood</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Availability</span>
+                        <span class="info-value">In Stock</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">SKU</span>
+                        <span class="info-value" id="product-sku">KRG-001</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Shipping</span>
+                        <span class="info-value">Free Delivery</span>
+                    </div>
                 </div>
             </div>
         </div>
